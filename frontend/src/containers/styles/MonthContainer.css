@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+
+.month-container{
+  height: 800px;
+  width: auto;
+  margin: 0 5% !important; 
+  font-family: 'Yantramanav', sans-serif;
+  /* 
+  background-color: #36393F;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  */
+}
+
+.weekday-row{
+  color: #FFFFFF;
+  margin: 0 auto;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.weekday{
+  text-align: center;
+  margin: auto 0;
+}
+
+.day-row{
+  height: 253px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.day{
+  font-weight: 300;
+  text-align: left;
+  color: #FFFFFF;
+  border-style: solid;
+  border-color: #36393F;
+  border-width: 1px;
+}
+
+.current-day{
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  background-color: #C05746;
+  border-radius: 50%;
+}

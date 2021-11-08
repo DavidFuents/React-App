@@ -1,0 +1,19 @@
+/* .upcoming-event{
+  height: auto;
+  width: 249px;
+  margin: 25px auto;
+  padding: 0 15px;
+  background-color: #1e1e20;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  text-align: left;
+} */
+
+.title{
+  font-family: "Yantramanav", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #C05746;
+  text-decoration: underline;
+}
+
