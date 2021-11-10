@@ -2,3 +2,12 @@
   width: auto;
   margin: 10px 0 0 5px;
 }
+
+.day{
+  font-weight: 300;
+  text-align: left;
+  color: #FFFFFF;
+  border-style: solid;
+  border-color: #36393F;
+  border-width: 1px;
+}

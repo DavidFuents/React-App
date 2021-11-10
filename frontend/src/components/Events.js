@@ -1,18 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link, Route } from "react-router-dom";
+import EventsList from "./EventsList";
 import Event from "./Event";
 import "./styles/Events.css";
 
-export default class Events extends Component {
-  render() {
-    return (
-      <div>
-        <p className="title">Today's Events</p>
-        <Event />
-        <Event />
-        <p className="title">Upcoming Events</p>
-        <Event />
-        <Event />
-      </div>
-    );
-  }
-}
+const Events = ({ match, events }) => (
+  <div>
+    {console.log('EVENTS: ', events)}
+    <Link to='/'>Go back</Link>
+    <EventsList events={events} />
+    <Route
+      path={`${match.url}/:eventId`}
+      render={(routerProps) => <Event {...routerProps} events={events} />}
+    />
+    <Link to='/form'>Add Event</Link>
+  </div>
+);
+
+export default Events;

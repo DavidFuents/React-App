@@ -6,7 +6,7 @@ export default class Day extends Component {
   render() {
     return (
       <div className='day-container'>
-        <p>00</p>
+        <p>{this.props.date}</p>
         <div>
           <DayEvents />
         </div>

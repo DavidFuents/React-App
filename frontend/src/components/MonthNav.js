@@ -4,6 +4,7 @@ import "./styles/MonthNav.css";
 
 export default class MonthNav extends Component {
   render() {
+    const { currentMonth, currentYear} = this.props.data;
     return (
       <div>
         <Row>
@@ -11,7 +12,7 @@ export default class MonthNav extends Component {
             <button type='button' className="nav-btn"> {"< "}</button>
           </Col>
           <Col>
-            <h1 className="month">November 2021</h1>
+            <h1 className="month">{currentMonth} {currentYear}</h1>
           </Col>
           <Col>
             <button type='button' className="nav-btn"> {" >"}</button>

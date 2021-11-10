@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import DayEvent from './DayEvent';
+import Event from './Event';
 
 export default class DayEvents extends Component{
   render() {
     return (
       <div>
-        <DayEvent />
+       
       </div>
     )
   }

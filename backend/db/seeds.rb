@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+day= Day.create(date: '11/21/2021')
+day.categories.create(name:"event", color: '#ffffff')
+
