@@ -1,6 +1,7 @@
 export default function eventsManager(
   state = {
     events: [],
+    dayEvents: [],
     loading: false,
   },
   action
@@ -11,6 +12,18 @@ export default function eventsManager(
         ...state,
         events: [...state.events],
         loading: true,
+      };
+    case "LOADING_DAY_EVENTS":
+      return {
+        ...state,
+        dayEvents: [],
+        loading: true,
+      };
+    case "ADD_DAY_EVENTS":
+      return {
+        ...state,
+        dayEvents: [...state.dayEvents, ...action.payload],
+        loading: false,
       };
     case "ADD_EVENTS":
       return {
@@ -25,7 +38,7 @@ export default function eventsManager(
         date: action.payload.date,
         time: action.payload.time,
         description: action.payload.description,
-      }
+      };
 
       return {
         ...state,

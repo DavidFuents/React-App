@@ -12,9 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_11_08_233017) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "color"
+  create_table "day_events", force: :cascade do |t|
     t.integer "day_id"
     t.integer "event_id"
     t.datetime "created_at", precision: 6, null: false
@@ -22,14 +20,14 @@ ActiveRecord::Schema.define(version: 2021_11_08_233017) do
   end
 
   create_table "days", force: :cascade do |t|
-    t.string "date"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "date"
+    t.date "date"
     t.string "time"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false

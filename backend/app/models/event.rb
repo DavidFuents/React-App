@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
-  has_many :categories 
-  has_many :days, through: :categories
+  has_many :day_events 
+  has_many :days, through: :day_events
 end

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { addEvent } from "../actions/addEvent.js";
+import { addDay } from "../actions/addDay.js";
 import EventForm from "../components/EventForm";
 import Events from "../components/Events";
 import TodayEvents from "../components/TodayEvents";
@@ -18,12 +19,12 @@ class EventsContainer extends Component {
                 <TodayEvents />
               </Route>
               <Route exact path="/form">
-                <EventForm addEvent={this.props.addEvent} />
+                <EventForm addEvent={this.props.addEvent} addDay={this.props.addDay} />
               </Route>
               <Route
                 path="/events"
                 render={(routerProps) => (
-                  <Events {...routerProps} events={this.props.events} />
+                  <Events {...routerProps} dayEvents={this.props.dayEvents} events={this.props.events} />
                 )}
               />
             </Switch>
@@ -37,6 +38,7 @@ class EventsContainer extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addEvent: (data) => dispatch(addEvent(data)),
+    addDay: (data) => dispatch(addDay(data)),
   };
 };
 

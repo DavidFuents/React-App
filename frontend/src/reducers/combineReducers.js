@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import eventsManager from "./eventsManager";
-import categoryManager from "./categoryManager";
+import dayManager from "./dayManager";
 import dateManager from "./dateManager";
 
 const rootReducer = combineReducers({
   events: eventsManager,
-  category: categoryManager,
+  day: dayManager,
   date: dateManager,
 });
 

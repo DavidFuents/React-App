@@ -4,16 +4,14 @@ import EventsList from "./EventsList";
 import Event from "./Event";
 import "./styles/Events.css";
 
-const Events = ({ match, events }) => (
+const Events = ({ match, events, dayEvents }) => (
   <div>
-    {console.log('EVENTS: ', events)}
     <Link to='/'>Go back</Link>
-    <EventsList events={events} />
+    <EventsList events={events} dayEvents={dayEvents} />
     <Route
       path={`${match.url}/:eventId`}
-      render={(routerProps) => <Event {...routerProps} events={events} />}
+      render={(routerProps) => <Event {...routerProps} dayEvents={dayEvents} events={events} />}
     />
-    <Link to='/form'>Add Event</Link>
   </div>
 );
 

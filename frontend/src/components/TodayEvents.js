@@ -7,6 +7,7 @@ const TodayEvents = () => (
     <p className="title">Today's Events</p>
     <p>None</p>
     <Link to='/events'>See Upcoming Events</Link>
+    <Link to='/form'>Add Event</Link>
   </div>
 );
 

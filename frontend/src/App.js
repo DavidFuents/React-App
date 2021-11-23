@@ -27,7 +27,7 @@ class App extends Component {
               </Stack>
             </Col>
             <Col className="right-container" xxl={2}>
-              <EventsContainer events={this.props.events} data={this.props.calendarData}/>
+              <EventsContainer dayEvents={this.props.dayEvents} events={this.props.events} data={this.props.calendarData}/>
             </Col>
           </Row>
         </Container>
@@ -39,6 +39,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     events: state.events.events,
+    dayEvents: state.events.dayEvents,
     calendarData: {
       currentDay: state.date.currentDay,
       currentMonth: state.date.currentMonth,

@@ -1,18 +1,21 @@
+require 'pry'
+
 class DaysController < ApplicationController
   def show 
-    day = Day.find_by(product_id: params[:product_id])
-    
-    render json: day.to_json(:except => [:updated_at, :created_at])
+    day = Day.find_by(id: params[:id])
+    events = day.events
+
+    render json: events.to_json(:except => [:updated_at, :created_at])
   end
 
   def create 
-    day = Day.create(day_params)
+    day = Day.find_or_create_by(day_params)
 
     render json: day.to_json(:except => [:updated_at, :created_at])
   end
 
   def destroy
-    day = Day.find(params[:id])
+    day = Day.find(day_params[:id])
     day.destroy
   
     render json: day.products.to_json(:except => [:updated_at, :created_at])
@@ -20,6 +23,6 @@ class DaysController < ApplicationController
   
   private
     def day_params
-      params.require(:day).permit(:date)
+      params.require(:day).permit(:id, :date)
     end
 end

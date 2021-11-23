@@ -21,13 +21,22 @@ export default class EventForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
+    let day = this.state.date.split('-')
     let data = {
       name: this.state.name,
       date: this.state.date,
       time: this.state.time,
       description: this.state.description,
+      day: day[2],
     };
 
+    let dayData = {
+      date: this.state.date,
+      day: day[2],
+    }
+    
+    this.props.addDay(dayData);
     this.props.addEvent(data);
     this.setState({
       name: '',
@@ -56,7 +65,7 @@ export default class EventForm extends Component {
           <Form.Group className="mb-3" controlId="date">
             <Form.Label>Date</Form.Label>
             <Form.Control
-              type="text"
+              type="date"
               name="date"
               placeholder="e.g. November 12, 2021"
               defaultValue={this.state.date}
@@ -67,7 +76,7 @@ export default class EventForm extends Component {
           <Form.Group className="mb-3" controlId="time">
             <Form.Label>Time</Form.Label>
             <Form.Control
-              type="text"
+              type="time"
               name="time"
               placeholder="e.g. 12:00:00 PM"
               defaultValue={this.state.time}
